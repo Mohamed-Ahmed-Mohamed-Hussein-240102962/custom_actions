@@ -1,10 +1,16 @@
 name: custom
 description: for JS
+inputs:
+  caching:
+    default: 'true'
+    required: false
+    description: cahing appility
 runs:
    using: 'composite'
    steps:
     
       - name: Cache dependencies
+        if: inputs.caching == 'true'
         id: cache
         uses: actions/cache@v3
         with:
