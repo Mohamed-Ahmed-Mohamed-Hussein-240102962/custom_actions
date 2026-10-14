@@ -18,7 +18,7 @@ jobs:
       - name: Lint code
         run: npm run lint
       - name: show
-        run: echo ${{steps.x.outputs.state}}
+        run: echo "${{steps.x.outputs.state}}"
   test:
     runs-on: ubuntu-latest
     steps:
