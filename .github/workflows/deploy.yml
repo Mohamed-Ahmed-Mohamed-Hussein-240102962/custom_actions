@@ -12,10 +12,13 @@ jobs:
         uses: actions/checkout@v3
       - name: custom for dep and caching
         uses: Mohamed-Ahmed-Mohamed-Hussein-240102962/standalone/dep@main
+        id: x
         with:
           caching: false
       - name: Lint code
         run: npm run lint
+      - name: show
+        run: echo ${{steps.x.outputs.state}}
   test:
     runs-on: ubuntu-latest
     steps:
